@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Omkar Sharma - AI Model Developer & IT Portfolio">
+<title>Omkar Sharma | AI Model Developer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap');
+
+:root{
+  --bg:#05070d; --card:rgba(13,18,31,.68); --text:#f5f7ff; --muted:#98a2b8;
+  --cyan:#00f5ff; --purple:#a855f7; --pink:#ff2bd6; --line:rgba(255,255,255,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Space Grotesk",sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:
+radial-gradient(circle at 15% 20%,rgba(0,245,255,.14),transparent 28%),
+radial-gradient(circle at 85% 25%,rgba(168,85,247,.16),transparent 30%),
+radial-gradient(circle at 50% 90%,rgba(255,43,214,.1),transparent 28%),#05070d}
+.grid{position:fixed;inset:0;z-index:-2;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+.cursor-glow{position:fixed;width:360px;height:360px;border-radius:50%;background:rgba(0,245,255,.06);filter:blur(70px);pointer-events:none;z-index:-1;transform:translate(-50%,-50%)}
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(92%,1100px);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,7,13,.58);border:1px solid var(--line);backdrop-filter:blur(18px);border-radius:18px;z-index:20}
+.logo{font-family:Syne;font-weight:800;font-size:1.2rem}.logo span{color:var(--cyan);text-shadow:0 0 16px var(--cyan)}
+.navlinks{display:flex;gap:24px}.navlinks a{color:var(--muted);text-decoration:none;font-size:.9rem;transition:.3s}.navlinks a:hover{color:var(--cyan)}
+main{width:min(90%,1120px);margin:auto}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding-top:80px}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(0,245,255,.25);background:rgba(0,245,255,.06);padding:8px 14px;border-radius:999px;color:#b9fbff;font-size:.85rem;margin-bottom:25px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 1.4s infinite}
+h1{font-family:Syne;font-size:clamp(3.5rem,10vw,8.5rem);line-height:.86;letter-spacing:-.06em}
+.gradient{background:linear-gradient(90deg,var(--cyan),#fff,var(--purple),var(--pink));background-size:250% auto;color:transparent;background-clip:text;-webkit-background-clip:text;animation:shine 5s linear infinite}
+.hero p{max-width:680px;margin:28px auto;color:var(--muted);font-size:clamp(1rem,2vw,1.2rem);line-height:1.8}
+.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{padding:14px 22px;border-radius:12px;text-decoration:none;font-weight:700;transition:.3s;border:1px solid var(--line);color:white}
+.btn.primary{background:linear-gradient(120deg,var(--cyan),#6c4dff);color:#03050a;box-shadow:0 0 28px rgba(0,245,255,.25)}
+.btn:hover{transform:translateY(-4px);box-shadow:0 10px 35px rgba(168,85,247,.2)}
+section{padding:100px 0}
+.kicker{color:var(--cyan);text-transform:uppercase;letter-spacing:.25em;font-size:.78rem;font-weight:700}
+h2{font-family:Syne;font-size:clamp(2.2rem,5vw,4.5rem);margin:12px 0 38px;letter-spacing:-.04em}
+.about-grid,.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.glass{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;backdrop-filter:blur(14px);position:relative;overflow:hidden;transition:.4s}
+.glass:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(0,245,255,.05),transparent);transform:translateX(-100%);transition:.7s}
+.glass:hover:before{transform:translateX(100%)}.glass:hover{transform:translateY(-7px);border-color:rgba(0,245,255,.3)}
+.glass h3{font-size:1.35rem;margin-bottom:14px}.glass p{color:var(--muted);line-height:1.75}
+.big-card{grid-row:span 2;display:flex;flex-direction:column;justify-content:flex-end;min-height:390px}
+.big-card .num{font-family:Syne;font-size:7rem;color:transparent;-webkit-text-stroke:1px rgba(0,245,255,.4);position:absolute;top:10px;right:24px}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.tag{padding:8px 12px;border:1px solid var(--line);border-radius:10px;color:#cbd3e4;font-size:.84rem}
+.timeline{border-left:1px solid rgba(0,245,255,.3);margin-left:10px;padding-left:30px}.item{position:relative;margin-bottom:45px}.item:before{content:"";position:absolute;width:13px;height:13px;background:var(--cyan);border-radius:50%;left:-37px;top:5px;box-shadow:0 0 18px var(--cyan)}.item small{color:var(--cyan)}.item h3{margin:7px 0;font-size:1.4rem}.item p{color:var(--muted);line-height:1.7}
+.contact{text-align:center;border:1px solid var(--line);border-radius:32px;padding:70px 25px;background:linear-gradient(135deg,rgba(0,245,255,.06),rgba(168,85,247,.08))}
+.contact h2{margin-bottom:15px}.contact p{color:var(--muted);margin-bottom:28px}
+footer{text-align:center;color:#667085;padding:30px;font-size:.85rem}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
+@keyframes pulse{50%{opacity:.35;transform:scale(.7)}}@keyframes shine{to{background-position:250% center}}
+@media(max-width:720px){.navlinks{display:none}.about-grid,.cards{grid-template-columns:1fr}.big-card{grid-row:auto;min-height:320px}h1{font-size:clamp(3.3rem,18vw,5.8rem)}section{padding:75px 0}}
+</style>
+</head>
+<body>
+<div class="grid"></div><div class="cursor-glow"></div>
+<nav>
+  <div class="logo">OMKAR<span>.</span></div>
+  <div class="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
+</nav>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="badge"><span class="dot"></span> Available to learn, build & grow</div>
+    <h1>OMKAR<br><span class="gradient">SHARMA</span></h1>
+    <p>AI Model Developer & IT enthusiast focused on building AI models, intelligent tools, automation systems and practical digital solutions.</p>
+    <div class="actions"><a class="btn primary" href="#about">Explore Portfolio ↘</a><a class="btn" href="mailto:omkarofficialworks@gmail.com">Let's Connect</a></div>
+  </div>
+</section>
+
+<section id="about" class="reveal">
+  <div class="kicker">01 / About me</div><h2>Building my future<br>with technology.</h2>
+  <div class="about-grid">
+    <article class="glass big-card"><span class="num">AI</span><h3>AI Model Developer</h3><p>I develop and experiment with AI models, intelligent systems and AI-powered tools. My focus is building practical solutions, improving AI workflows and turning technical ideas into working digital products.</p><div class="tags"><span class="tag">AI Development</span><span class="tag">AI Models</span><span class="tag">Automation</span><span class="tag">Python</span><span class="tag">Prompt Engineering</span></div></article>
+    <article class="glass"><h3>📍 Based in India</h3><p>Ghazipur, Muhammadabad, Uttar Pradesh — open to opportunities that expand my technical skills and industry exposure.</p></article>
+    <article class="glass"><h3>⚡ My Objective</h3><p>To grow in a strong technology-driven organization where I can sharpen my skills, solve real problems and reach my full potential.</p></article>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <div class="kicker">02 / Capabilities</div><h2>Skills & focus.</h2>
+  <div class="cards">
+    <article class="glass"><h3>Artificial Intelligence</h3><p>AI model development, intelligent workflows, prompt engineering and experimentation with modern generative AI systems.</p></article>
+    <article class="glass"><h3>Computer Operations</h3><p>Internet services, printing, scanning, digital documentation and day-to-day computer operations.</p></article>
+    <article class="glass"><h3>Technical Troubleshooting</h3><p>Basic system troubleshooting and practical problem solving with a hands-on learning approach.</p></article>
+    <article class="glass"><h3>Customer Service</h3><p>Assisting customers, understanding requirements and handling multiple operational tasks efficiently.</p></article>
+  </div>
+</section>
+
+
+<section id="projects" class="reveal">
+  <div class="kicker">03 / Selected builds</div><h2>Developer projects.</h2>
+  <div class="cards">
+    <article class="glass"><h3>🤖 AI Model Development</h3><p>Developing and experimenting with AI models and intelligent systems designed around practical use cases and modern AI workflows.</p><div class="tags"><span class="tag">AI</span><span class="tag">Models</span><span class="tag">Development</span></div></article>
+    <article class="glass"><h3>⚙️ Automation Tools</h3><p>Building automation-oriented tools and workflows that reduce repetitive work and connect technical ideas with usable digital systems.</p><div class="tags"><span class="tag">Python</span><span class="tag">Automation</span><span class="tag">APIs</span></div></article>
+    <article class="glass"><h3>🧠 Generative AI Experiments</h3><p>Exploring prompt systems, generative AI and intelligent content workflows with a strong focus on experimentation and implementation.</p><div class="tags"><span class="tag">GenAI</span><span class="tag">Prompt Engineering</span></div></article>
+    <article class="glass"><h3>💻 IT & Digital Systems</h3><p>Hands-on experience with computer operations, digital services, troubleshooting and real-world technical support.</p><div class="tags"><span class="tag">IT</span><span class="tag">Troubleshooting</span></div></article>
+  </div>
+</section>
+
+<section id="experience" class="reveal">
+  <div class="kicker">04 / Journey</div><h2>Experience & education.</h2>
+  <div class="timeline">
+    <div class="item"><small>2024 — PRESENT</small><h3>Cyber Café · IT Operations</h3><p>Working with internet services, printing, scanning, customer assistance and basic troubleshooting. Building practical computer and service experience through daily operations.</p></div>
+    <div class="item"><small>EDUCATION</small><h3>12th · UP Board</h3><p>Completed higher secondary education under the Uttar Pradesh Board.</p></div>
+    <div class="item"><small>EDUCATION</small><h3>10th · UP Board</h3><p>Completed secondary education under the Uttar Pradesh Board.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="contact">
+    <div class="kicker">05 / Contact</div><h2>Have an opportunity?</h2>
+    <p>I'm open to AI development, automation and IT-focused opportunities where I can build, learn and ship practical technology.</p>
+    <div class="actions"><a class="btn primary" href="mailto:omkarofficialworks@gmail.com">omkarofficialworks@gmail.com</a><a class="btn" href="tel:+919580189480">+91 95801 89480</a></div>
+  </div>
+</section>
+</main>
+<footer>© 2026 Omkar Sharma · Designed for the future.</footer>
+
+<script>
+const glow=document.querySelector('.cursor-glow');
+window.addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('.glass').forEach(card=>{
+ card.addEventListener('pointermove',e=>{
+  const r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+  card.style.transform=`perspective(900px) rotateX(${-(y-r.height/2)/35}deg) rotateY(${(x-r.width/2)/35}deg) translateY(-7px)`;
+ });
+ card.addEventListener('pointerleave',()=>card.style.transform='');
+});
+</script>
+</body>
+</html>
